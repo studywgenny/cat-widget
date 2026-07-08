@@ -17,7 +17,7 @@ just a lil guy really ✩
 
 **1st time setup** (only ever do this once)
 
-1. install [Node.js](https://nodejs.org) ~ grab the **LTS** version and click
+1. install [Node.js](https://nodejs.org) ps. grab the **LTS** version and click
    through the installer
 2. make sure your folder has everything inside it: `main.js`, `preload.js`,
    `kitty.html`, `package.json`, and an `assets` folder with your `kitty.gif`
@@ -25,7 +25,7 @@ just a lil guy really ✩
    the link to the gif is [here](https://uk.pinterest.com/pin/883761126868578713/).
 4. open the folder, click the address bar at the top, type `cmd`, press enter
     a little black terminal opens
-5. type `npm install` and press enter ~ this grabs electron (takes a minute!)
+5. type `npm install` and press enter  this grabs electron (takes a minute!)
 
 **running** *(every time)*
 
