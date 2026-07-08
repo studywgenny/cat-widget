@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<style>
+  html, body {
+    margin: 0; width: 100%; height: 100%;
+    background: transparent; overflow: hidden;
+    cursor: grab;
+  }
+  #kitty {
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 130px; height: 130px;
+    image-rendering: auto;        
+    -webkit-user-drag: none;
+    opacity: 1; transition: opacity .5s ease;
+  }
+  #kitty.fade { opacity: 0; }
+</style>
+</head>
+<body>
+  <img id="kitty" src="assets/kitty.gif" alt="" />
+
+<script>
+  const kitty = document.getElementById("kitty");
+
+  kitty.onerror = () => {
+    kitty.style.display = "none";
+    document.getElementById("err").style.display = "block";
+  };
+
+  async function roam() {
+    const b = await window.api.kittyBounds();
+    const winW = 180, winH = 180;
+    const nx = Math.floor(Math.random() * (b.screenW - winW));
+    const ny = Math.floor(Math.random() * (b.screenH - winH));
+    kitty.classList.add("fade");
+    setTimeout(() => {
+      window.api.moveKitty({ x: nx, y: ny });
+      kitty.classList.remove("fade");
+    }, 220);
+  }
+  function scheduleRoam() {
+    const wait = 20000 + Math.random() * 25000; // ~20–45s
+    setTimeout(() => { roam(); scheduleRoam(); }, wait);
+  }
+  scheduleRoam();
+
+  // ── drag to reposition by hand ──
+  let dragging = false, offX = 0, offY = 0;
+  kitty.addEventListener("mousedown", (e) => {
+    dragging = true; offX = e.screenX; offY = e.screenY;
+    document.body.style.cursor = "grabbing";
+  });
+  window.addEventListener("mousemove", async (e) => {
+    if (!dragging) return;
+    const b = await window.api.kittyBounds();
+    const dx = e.screenX - offX, dy = e.screenY - offY;
+    window.api.moveKitty({ x: b.x + dx, y: b.y + dy });
+    offX = e.screenX; offY = e.screenY;
+  });
+  window.addEventListener("mouseup", () => { dragging = false; document.body.style.cursor = "grab"; });
+
+  // double-click to make her hop right now
+  kitty.addEventListener("dblclick", roam);
+</script>
+</body>
+</html>
