@@ -15,7 +15,7 @@ just a lil guy really ✩
 
 ### ₊˚꩜ getting started
 
-**one-time setup** *(only ever do this once)*
+**1st time setup** (only ever do this once)
 
 1. install [Node.js](https://nodejs.org) ~ grab the **LTS** version and click
    through the installer
@@ -27,7 +27,7 @@ just a lil guy really ✩
     a little black terminal opens
 5. type `npm install` and press enter ~ this grabs electron (takes a minute!)
 
-**running her** *(every time)*
+**running** *(every time)*
 
 1. open the folder & pop open the terminal again (`cmd` in the address bar)
 2. type `npm start` and press enter
