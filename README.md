@@ -1,11 +1,6 @@
 # cat-widget
 <div align="center">
 
-╱|、
-(˚ˎ 。7
-|、˜〵
-じしˍ,)ノ
-
 # ˚˖𓍢ִ໋❀ lil guy widget
 
 a little kitty that chases a heart on ur screen while you work* ♡
