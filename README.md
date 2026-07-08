@@ -6,8 +6,7 @@ a little kitty that chases a heart on ur screen while you work* ♡
 
 ### ⋆˚꩜｡ what is this???
 
-a tiny desktop companion to keep you company
-while you study or code or overthink ✩
+just a lil guy really ✩
 
 ### ˖˚⊹ ꣑ৎ what she does
 
